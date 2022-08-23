@@ -1,0 +1,54 @@
+import java.util.*;
+class Countries {
+	String name;
+	String capital;
+	double population;
+	
+	public Countries(String name,String capital,double pop) {
+		this.capital=capital;
+		this.name=name;
+		this.population=pop;
+	}
+}
+class Main {
+	public static void main(String[] args) {
+		ArrayList<Countries> arr=new ArrayList<Countries>();
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		
+		for(int i=0;i<n;i++) {
+			sc.nextLine();
+			System.out.println("Enter country name");
+			String name=sc.nextLine();
+			sc.nextLine();
+			System.out.println("Enter capital");
+			String cap=sc.nextLine();
+			System.out.println("Enter population");
+			double pop=sc.nextDouble();
+			Countries cn=new Countries(name, cap, pop);
+			arr.add(cn);
+		}
+		sc.nextLine();
+		System.out.println("Enter country name");
+		String name=sc.nextLine();
+		double pop=0;
+		String bigC=null;
+		for(Countries c:arr) {
+			if((c.name).equals(name)) {
+				System.out.println("capital is "+c.capital);
+				System.out.println("Population is "+c.population);
+			}
+		}
+		
+		for(Countries c:arr) {
+			
+			if(c.population>pop) {
+				pop=c.population;
+				bigC=c.name;
+			}
+		}
+		
+		System.out.println("Country with highest population is "+bigC);
+		
+	}
+}

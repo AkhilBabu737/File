@@ -1,0 +1,48 @@
+class Area
+{
+   int length;
+   int breadth;
+   
+   Area (int i, int j)
+   {
+     length=i;
+     breadth=j;
+   }
+   public double calcArea()
+   {
+       return 0;
+   }
+}
+class Rectangle extends Area
+{
+    Rectangle(int i,int j)
+    {
+    super(i,j);
+    }
+    public double calcArea()
+    {
+        double a= length*breadth;
+        return a;
+    }
+}
+class Triangle extends Area
+{
+    Triangle(int i,int j)
+    {
+      super(i,j);
+    }
+    public double calArea()
+    {
+        double ar=0.5*length*breadth;
+        return ar;
+    }
+    class Shape
+    {
+       public static void main(String[] args) 
+       {
+          Rectangle r1 = new Rectangle(5,7);
+          System.out.println(r1.calcArea());
+          Triangle t1 = new Triangle(5,7);
+          System.out.println(t1.calcArea());
+    }
+ }

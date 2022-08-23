@@ -1,0 +1,116 @@
+
+class Person {
+	static String name;
+	static int age;
+
+	Person(String name,int age) {
+		this.name=name;
+		this.age=age;
+	}
+	void display()
+	{
+		System.out.println("name of the person is :" + name);
+		System.out.println("age of the person is :"+ age);
+	}
+
+}
+
+class Student extends Person
+{
+    String rollNo;
+    String branch;
+    Student(String rollNo,String branch) {
+        super(name,age);
+		this.rollNo = rollNo;
+		this.branch = branch;
+    }
+		void display()
+	{
+		System.out.println("RollNo of the person is :" + rollNo);
+		System.out.println("Branch of the person is :" + branch);
+	}
+}
+
+class Employee extends Person
+{
+    static String ecNo;
+    static String doj;
+    Employee(String ecNo,String doj) {
+         super(name,age);
+		this.ecNo = ecNo;
+		this.doj = doj;
+     }
+     	void display()
+	{
+		System.out.println("ecNo of the person is :" + ecNo);
+		System.out.println("date of joining of the person is :" + doj);
+	}
+}
+
+class Staff extends Employee
+{
+    String designation;
+    Staff(String designation)
+    {
+        super(Employee.ecNo,Employee.doj);
+        this.designation = designation;
+    }
+    void display()
+    {
+        super.display();
+		System.out.println("designation of the person is :" + designation);
+    }
+}
+
+class Faculty extends Employee
+{
+    String designation;
+    Faculty(String designation)
+     {
+         super(Employee.ecNo,Employee.doj);
+         this.designation = designation;
+     }
+void display()
+    {
+        super.display();
+		System.out.println("designation of the person is :" + designation);
+    }
+}
+
+class Main
+{
+    static void display(person p)
+    {
+        person ref = p;
+        ref.display();
+    }
+    public static void main(String args [])
+    {
+        Scanner sc = new Scanner(System.in);
+        Person person = new Person("Akhil",23);
+        Student student = new Student("18B601","ECE");
+        Employee employee = new Employee("55463","02-10-2021");
+        Faculty faculty = new Faculty("Assistant Professor");
+        Staff staff = new Staff("Technical");
+        System.out.println("Person");
+        System.out.println("Student");
+        System.out.println("Employye");
+        System.out.println("Faculty");
+        System.out.println("Staff");
+        int option = scan.nextInt();
+        switch(option)
+        {
+            case 1:
+                display(person);
+            case 2:
+                display(student);
+            case 3:
+                display(employee);
+            case 4:
+                display(faculty);
+            case 5:
+                display(staff);
+        }
+        				
+    }
+}

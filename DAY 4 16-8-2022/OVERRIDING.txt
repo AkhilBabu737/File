@@ -1,0 +1,64 @@
+abstract class Interest
+{
+    abstract void bankName();
+    abstract void rateOfInterest();
+}
+
+class SBI extends Interest
+{
+    void bankName()
+    {
+    System.out.println("name of the bank is: State Bank Of India");
+    }
+    
+    void rateOfInterest()
+    {
+        System.out.println("rate of interest is 3.5%");
+    }
+}
+class HDFC extends Interest
+{
+    void bankName()
+    {
+    System.out.println("name of the bank is: HDFC Bank");
+    }
+    
+    void rateOfInterest()
+    {
+        System.out.println("rate of interest is 4.5%");
+    }
+}
+
+class Axis extends Interest
+{
+    void bankName()
+    {
+    System.out.println("name of the bank is: Axis Bank");
+    }
+    
+    void rateOfInterest()
+    {
+        System.out.println("rate of interest is 6%");
+    }
+}
+
+class Main
+{
+    public static void main(String args [])
+    {
+        SBI sbi = new SBI();
+        HDFC hdfc = new HDFC();
+        Axis axis = new Axis();
+        Interest i;
+        i = sbi;
+        i.bankName();
+        i.rateOfInterest();
+        i = hdfc;
+        i.bankName();
+        i.rateOfInterest();
+        i = axis;
+        i.bankName();
+        i.rateOfInterest();
+    }
+}
+
